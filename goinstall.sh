@@ -74,33 +74,33 @@ fi
 
 if [ "$1" == "--remove" ]; then
     rm -rf "$GOROOT"
-    if [ "$OS" == "Darwin" ]; then
-        if [ "$shell" == "fish" ]; then
-            sed -i "" '/# GoLang/d' "$shell_profile"
-            sed -i "" '/set GOROOT/d' "$shell_profile"
-            sed -i "" '/set GOPATH/d' "$shell_profile"
-            sed -i "" '/set PATH $GOPATH\/bin $GOROOT\/bin $PATH/d' "$shell_profile"
-        else
-            sed -i "" '/# GoLang/d' "$shell_profile"
-            sed -i "" '/export GOROOT/d' "$shell_profile"
-            sed -i "" '/$GOROOT\/bin/d' "$shell_profile"
-            sed -i "" '/export GOPATH/d' "$shell_profile"
-            sed -i "" '/$GOPATH\/bin/d' "$shell_profile"
-        fi
-    else
-        if [ "$shell" == "fish" ]; then
-            sed -i '/# GoLang/d' "$shell_profile"
-            sed -i '/set GOROOT/d' "$shell_profile"
-            sed -i '/set GOPATH/d' "$shell_profile"
-            sed -i '/set PATH $GOPATH\/bin $GOROOT\/bin $PATH/d' "$shell_profile"
-        else
-            sed -i '/# GoLang/d' "$shell_profile"
-            sed -i '/export GOROOT/d' "$shell_profile"
-            sed -i '/$GOROOT\/bin/d' "$shell_profile"
-            sed -i '/export GOPATH/d' "$shell_profile"
-            sed -i '/$GOPATH\/bin/d' "$shell_profile"
-        fi
-    fi
+    # if [ "$OS" == "Darwin" ]; then
+    #     if [ "$shell" == "fish" ]; then
+    #         sed -i "" '/# GoLang/d' "$shell_profile"
+    #         sed -i "" '/set GOROOT/d' "$shell_profile"
+    #         sed -i "" '/set GOPATH/d' "$shell_profile"
+    #         sed -i "" '/set PATH $GOPATH\/bin $GOROOT\/bin $PATH/d' "$shell_profile"
+    #     else
+    #         sed -i "" '/# GoLang/d' "$shell_profile"
+    #         sed -i "" '/export GOROOT/d' "$shell_profile"
+    #         sed -i "" '/$GOROOT\/bin/d' "$shell_profile"
+    #         sed -i "" '/export GOPATH/d' "$shell_profile"
+    #         sed -i "" '/$GOPATH\/bin/d' "$shell_profile"
+    #     fi
+    # else
+    #     if [ "$shell" == "fish" ]; then
+    #         sed -i '/# GoLang/d' "$shell_profile"
+    #         sed -i '/set GOROOT/d' "$shell_profile"
+    #         sed -i '/set GOPATH/d' "$shell_profile"
+    #         sed -i '/set PATH $GOPATH\/bin $GOROOT\/bin $PATH/d' "$shell_profile"
+    #     else
+    #         sed -i '/# GoLang/d' "$shell_profile"
+    #         sed -i '/export GOROOT/d' "$shell_profile"
+    #         sed -i '/$GOROOT\/bin/d' "$shell_profile"
+    #         sed -i '/export GOPATH/d' "$shell_profile"
+    #         sed -i '/$GOPATH\/bin/d' "$shell_profile"
+    #     fi
+    # fi
     echo "Go removed."
     exit 0
 elif [ "$1" == "--help" ]; then
