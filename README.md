@@ -36,8 +36,8 @@ Pass the `--version` option into the script including the version that you wish 
 ```shell
 wget -q -O - https://raw.githubusercontent.com/salutgeek/golang-tools-install-script/master/goinstall.sh | bash -s -- --version 1.18
 
-# or...
-curl -L https://raw.githubusercontent.com/salutgeek/golang-tools-install-script/master/goinstall.sh | bash -s -- --version 1.18
+# or you can also specify the patch version
+curl -L https://raw.githubusercontent.com/salutgeek/golang-tools-install-script/master/goinstall.sh | bash -s -- --version 1.23.1
 ```
 
 ## :no_entry_sign: Uninstall
